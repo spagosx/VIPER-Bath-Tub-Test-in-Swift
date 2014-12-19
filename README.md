@@ -20,3 +20,6 @@ The user will be presented with 2 taps. The user will be able to turn on and off
 - There is no warmup time.
 - There is no reduced flow.
 - When both taps are open there's a full flow rate and constant temperature.
+
+**Plan**
+I will commit small sessions of coding as I go through the development, and I will try to write some step by step notes here to show how I ended up with that code and those tests (maybe this could end up being transferred to a blog article).
