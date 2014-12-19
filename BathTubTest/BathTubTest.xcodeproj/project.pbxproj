@@ -9,10 +9,22 @@
 /* Begin PBXBuildFile section */
 		F177796F1A4327EE00091943 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F177796E1A4327EE00091943 /* AppDelegate.swift */; };
 		F17779711A4327EE00091943 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17779701A4327EE00091943 /* ViewController.swift */; };
-		F17779741A4327EE00091943 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F17779721A4327EE00091943 /* Main.storyboard */; };
+		F17779741A4327EE00091943 /* ViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F17779721A4327EE00091943 /* ViewController.storyboard */; };
 		F17779761A4327EE00091943 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F17779751A4327EE00091943 /* Images.xcassets */; };
 		F17779791A4327EE00091943 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F17779771A4327EE00091943 /* LaunchScreen.xib */; };
-		F17779851A4327EE00091943 /* BathTubTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17779841A4327EE00091943 /* BathTubTestTests.swift */; };
+		F177798F1A43388500091943 /* WireframeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F177798E1A43388500091943 /* WireframeTests.swift */; };
+		F17779911A433B1A00091943 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17779701A4327EE00091943 /* ViewController.swift */; };
+		F17779921A433B1D00091943 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F177796E1A4327EE00091943 /* AppDelegate.swift */; };
+		F17779941A433B5600091943 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17779931A433B5600091943 /* View.swift */; };
+		F17779951A433B8400091943 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17779931A433B5600091943 /* View.swift */; };
+		F17779971A433C6B00091943 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17779961A433C6B00091943 /* Presenter.swift */; };
+		F17779981A433C7200091943 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17779961A433C6B00091943 /* Presenter.swift */; };
+		F177799A1A433CD800091943 /* ViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17779991A433CD800091943 /* ViewControllerTests.swift */; };
+		F177799C1A436F8500091943 /* Wireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F177799B1A436F8500091943 /* Wireframe.swift */; };
+		F177799D1A436F8500091943 /* Wireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F177799B1A436F8500091943 /* Wireframe.swift */; };
+		F177799F1A4393DA00091943 /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F177799E1A4393DA00091943 /* Interactor.swift */; };
+		F17779A01A43945C00091943 /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F177799E1A4393DA00091943 /* Interactor.swift */; };
+		F17779A31A44CCD900091943 /* AppDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17779A21A44CCD900091943 /* AppDelegateTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,12 +42,18 @@
 		F177796D1A4327EE00091943 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F177796E1A4327EE00091943 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F17779701A4327EE00091943 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F17779731A4327EE00091943 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F17779731A4327EE00091943 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ViewController.storyboard; sourceTree = "<group>"; };
 		F17779751A4327EE00091943 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F17779781A4327EE00091943 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		F177797E1A4327EE00091943 /* BathTubTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BathTubTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F17779831A4327EE00091943 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F17779841A4327EE00091943 /* BathTubTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BathTubTestTests.swift; sourceTree = "<group>"; };
+		F177798E1A43388500091943 /* WireframeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WireframeTests.swift; sourceTree = "<group>"; };
+		F17779931A433B5600091943 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		F17779961A433C6B00091943 /* Presenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
+		F17779991A433CD800091943 /* ViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerTests.swift; sourceTree = "<group>"; };
+		F177799B1A436F8500091943 /* Wireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wireframe.swift; sourceTree = "<group>"; };
+		F177799E1A4393DA00091943 /* Interactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
+		F17779A21A44CCD900091943 /* AppDelegateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +97,8 @@
 			children = (
 				F177796E1A4327EE00091943 /* AppDelegate.swift */,
 				F17779701A4327EE00091943 /* ViewController.swift */,
-				F17779721A4327EE00091943 /* Main.storyboard */,
+				F17779A11A44C30D00091943 /* VIPER */,
+				F17779721A4327EE00091943 /* ViewController.storyboard */,
 				F17779751A4327EE00091943 /* Images.xcassets */,
 				F17779771A4327EE00091943 /* LaunchScreen.xib */,
 				F177796C1A4327EE00091943 /* Supporting Files */,
@@ -98,7 +117,8 @@
 		F17779811A4327EE00091943 /* BathTubTestTests */ = {
 			isa = PBXGroup;
 			children = (
-				F17779841A4327EE00091943 /* BathTubTestTests.swift */,
+				F17779A41A44D09A00091943 /* VIPER Tests */,
+				F17779A51A44D0A400091943 /* App Side Tests */,
 				F17779821A4327EE00091943 /* Supporting Files */,
 			);
 			path = BathTubTestTests;
@@ -110,6 +130,34 @@
 				F17779831A4327EE00091943 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F17779A11A44C30D00091943 /* VIPER */ = {
+			isa = PBXGroup;
+			children = (
+				F17779931A433B5600091943 /* View.swift */,
+				F177799E1A4393DA00091943 /* Interactor.swift */,
+				F17779961A433C6B00091943 /* Presenter.swift */,
+				F177799B1A436F8500091943 /* Wireframe.swift */,
+			);
+			name = VIPER;
+			sourceTree = "<group>";
+		};
+		F17779A41A44D09A00091943 /* VIPER Tests */ = {
+			isa = PBXGroup;
+			children = (
+				F177798E1A43388500091943 /* WireframeTests.swift */,
+			);
+			name = "VIPER Tests";
+			sourceTree = "<group>";
+		};
+		F17779A51A44D0A400091943 /* App Side Tests */ = {
+			isa = PBXGroup;
+			children = (
+				F17779A21A44CCD900091943 /* AppDelegateTests.swift */,
+				F17779991A433CD800091943 /* ViewControllerTests.swift */,
+			);
+			name = "App Side Tests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,7 +240,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F17779741A4327EE00091943 /* Main.storyboard in Resources */,
+				F17779741A4327EE00091943 /* ViewController.storyboard in Resources */,
 				F17779791A4327EE00091943 /* LaunchScreen.xib in Resources */,
 				F17779761A4327EE00091943 /* Images.xcassets in Resources */,
 			);
@@ -212,8 +260,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F177799F1A4393DA00091943 /* Interactor.swift in Sources */,
+				F177799C1A436F8500091943 /* Wireframe.swift in Sources */,
 				F17779711A4327EE00091943 /* ViewController.swift in Sources */,
 				F177796F1A4327EE00091943 /* AppDelegate.swift in Sources */,
+				F17779971A433C6B00091943 /* Presenter.swift in Sources */,
+				F17779941A433B5600091943 /* View.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,7 +273,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F17779851A4327EE00091943 /* BathTubTestTests.swift in Sources */,
+				F17779981A433C7200091943 /* Presenter.swift in Sources */,
+				F17779A31A44CCD900091943 /* AppDelegateTests.swift in Sources */,
+				F17779921A433B1D00091943 /* AppDelegate.swift in Sources */,
+				F17779911A433B1A00091943 /* ViewController.swift in Sources */,
+				F17779951A433B8400091943 /* View.swift in Sources */,
+				F177799D1A436F8500091943 /* Wireframe.swift in Sources */,
+				F177798F1A43388500091943 /* WireframeTests.swift in Sources */,
+				F17779A01A43945C00091943 /* Interactor.swift in Sources */,
+				F177799A1A433CD800091943 /* ViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,12 +296,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		F17779721A4327EE00091943 /* Main.storyboard */ = {
+		F17779721A4327EE00091943 /* ViewController.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				F17779731A4327EE00091943 /* Base */,
 			);
-			name = Main.storyboard;
+			name = ViewController.storyboard;
 			sourceTree = "<group>";
 		};
 		F17779771A4327EE00091943 /* LaunchScreen.xib */ = {
@@ -405,6 +465,7 @@
 				F177798A1A4327EE00091943 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F177798B1A4327EE00091943 /* Build configuration list for PBXNativeTarget "BathTubTestTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +474,7 @@
 				F177798D1A4327EE00091943 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
