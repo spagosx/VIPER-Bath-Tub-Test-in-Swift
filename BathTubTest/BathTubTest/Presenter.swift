@@ -10,14 +10,15 @@ import Foundation
 
 class Presenter: NSObject {
     weak var view: View!
-    var interactor: Interactor
+    var interactor: Interactor!
     
-    init(interactor: Interactor) {
-        self.interactor = interactor
-        super.init()
+    func viewDidLoad() {
+        interactor.fetchWaterLevel()
     }
 }
 
 extension Presenter: InteractorDelegate {
-    
+    func updateWaterLevel(level: Float) {
+        view.updateWaterLevel("\(level)")
+    }
 }

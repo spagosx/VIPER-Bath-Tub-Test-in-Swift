@@ -11,17 +11,22 @@ import UIKit
 class ViewController: UIViewController, View {
     
     var presenter: Presenter! = nil
+    @IBOutlet var waterLevelLabel: UILabel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        presenter.viewDidLoad()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+        
+    func updateWaterLevel(level: String) {
+        waterLevelLabel?.text = level
+    }
+    
 }
 
 

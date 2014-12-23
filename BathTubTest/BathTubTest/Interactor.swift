@@ -9,9 +9,17 @@
 import UIKit
 
 protocol InteractorDelegate : class {
-    
+    func updateWaterLevel(level: Float)
 }
 
 class Interactor: NSObject {
+    
     weak var delegate: InteractorDelegate? = nil
+    var bath: Bath?
+    
+    func fetchWaterLevel() {
+        let waterLevel = bath?.waterLevel()
+        delegate?.updateWaterLevel(0)
+    }
+    
 }

@@ -18,6 +18,9 @@ class WireframeTests: XCTestCase {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         class ViewClass: View {
             var presenter: Presenter! = nil
+            private func updateWaterLevel(level: String) {
+                
+            }
         }
         view = ViewClass()
         Wireframe.configureModules(view)
@@ -45,6 +48,10 @@ class WireframeTests: XCTestCase {
     func testWireframeInteractorDelegateIsCorrect() {
         let delegate = view.presenter.interactor.delegate
         XCTAssertTrue(delegate === view.presenter)
+    }
+    
+    func testWireFrameInteractorHasBathModel() {
+        XCTAssertNotNil(view.presenter.interactor.bath)
     }
 
 }

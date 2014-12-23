@@ -8,6 +8,7 @@
 
 import Foundation
 
-@objc protocol View: class {
+protocol View: class {
     var presenter: Presenter! {get set}
+    func updateWaterLevel(level: String)
 }

@@ -13,18 +13,24 @@
 		F17779761A4327EE00091943 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F17779751A4327EE00091943 /* Images.xcassets */; };
 		F17779791A4327EE00091943 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F17779771A4327EE00091943 /* LaunchScreen.xib */; };
 		F177798F1A43388500091943 /* WireframeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F177798E1A43388500091943 /* WireframeTests.swift */; };
-		F17779911A433B1A00091943 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17779701A4327EE00091943 /* ViewController.swift */; };
-		F17779921A433B1D00091943 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F177796E1A4327EE00091943 /* AppDelegate.swift */; };
 		F17779941A433B5600091943 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17779931A433B5600091943 /* View.swift */; };
-		F17779951A433B8400091943 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17779931A433B5600091943 /* View.swift */; };
 		F17779971A433C6B00091943 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17779961A433C6B00091943 /* Presenter.swift */; };
-		F17779981A433C7200091943 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17779961A433C6B00091943 /* Presenter.swift */; };
 		F177799A1A433CD800091943 /* ViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17779991A433CD800091943 /* ViewControllerTests.swift */; };
 		F177799C1A436F8500091943 /* Wireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F177799B1A436F8500091943 /* Wireframe.swift */; };
-		F177799D1A436F8500091943 /* Wireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F177799B1A436F8500091943 /* Wireframe.swift */; };
 		F177799F1A4393DA00091943 /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F177799E1A4393DA00091943 /* Interactor.swift */; };
-		F17779A01A43945C00091943 /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F177799E1A4393DA00091943 /* Interactor.swift */; };
 		F17779A31A44CCD900091943 /* AppDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17779A21A44CCD900091943 /* AppDelegateTests.swift */; };
+		F1E4F8CE1A49BD1E00709469 /* InteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E4F8CD1A49BD1E00709469 /* InteractorTests.swift */; };
+		F1E4F8D01A49BDEC00709469 /* Bath.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E4F8CF1A49BDEC00709469 /* Bath.swift */; };
+		F1E4F8D21A49C30700709469 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F177796E1A4327EE00091943 /* AppDelegate.swift */; };
+		F1E4F8D31A49C30700709469 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17779701A4327EE00091943 /* ViewController.swift */; };
+		F1E4F8D51A49C30700709469 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17779931A433B5600091943 /* View.swift */; };
+		F1E4F8D61A49C30700709469 /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F177799E1A4393DA00091943 /* Interactor.swift */; };
+		F1E4F8D71A49C30700709469 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17779961A433C6B00091943 /* Presenter.swift */; };
+		F1E4F8D81A49C30700709469 /* Wireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F177799B1A436F8500091943 /* Wireframe.swift */; };
+		F1E4F8D91A49C3EF00709469 /* Bath.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E4F8CF1A49BDEC00709469 /* Bath.swift */; };
+		F1E4F8DB1A49CBA000709469 /* BathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E4F8DA1A49CBA000709469 /* BathTests.swift */; };
+		F1E4F8DD1A49CCAA00709469 /* PresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E4F8DC1A49CCAA00709469 /* PresenterTests.swift */; };
+		F1E4F8DE1A49D9FF00709469 /* ViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F17779721A4327EE00091943 /* ViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +60,10 @@
 		F177799B1A436F8500091943 /* Wireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wireframe.swift; sourceTree = "<group>"; };
 		F177799E1A4393DA00091943 /* Interactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
 		F17779A21A44CCD900091943 /* AppDelegateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateTests.swift; sourceTree = "<group>"; };
+		F1E4F8CD1A49BD1E00709469 /* InteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractorTests.swift; sourceTree = "<group>"; };
+		F1E4F8CF1A49BDEC00709469 /* Bath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bath.swift; sourceTree = "<group>"; };
+		F1E4F8DA1A49CBA000709469 /* BathTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BathTests.swift; sourceTree = "<group>"; };
+		F1E4F8DC1A49CCAA00709469 /* PresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresenterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +107,7 @@
 			children = (
 				F177796E1A4327EE00091943 /* AppDelegate.swift */,
 				F17779701A4327EE00091943 /* ViewController.swift */,
+				F1E4F8CF1A49BDEC00709469 /* Bath.swift */,
 				F17779A11A44C30D00091943 /* VIPER */,
 				F17779721A4327EE00091943 /* ViewController.storyboard */,
 				F17779751A4327EE00091943 /* Images.xcassets */,
@@ -147,6 +158,9 @@
 			isa = PBXGroup;
 			children = (
 				F177798E1A43388500091943 /* WireframeTests.swift */,
+				F1E4F8CD1A49BD1E00709469 /* InteractorTests.swift */,
+				F1E4F8DC1A49CCAA00709469 /* PresenterTests.swift */,
+				F1E4F8DA1A49CBA000709469 /* BathTests.swift */,
 			);
 			name = "VIPER Tests";
 			sourceTree = "<group>";
@@ -250,6 +264,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1E4F8DE1A49D9FF00709469 /* ViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +277,7 @@
 			files = (
 				F177799F1A4393DA00091943 /* Interactor.swift in Sources */,
 				F177799C1A436F8500091943 /* Wireframe.swift in Sources */,
+				F1E4F8D01A49BDEC00709469 /* Bath.swift in Sources */,
 				F17779711A4327EE00091943 /* ViewController.swift in Sources */,
 				F177796F1A4327EE00091943 /* AppDelegate.swift in Sources */,
 				F17779971A433C6B00091943 /* Presenter.swift in Sources */,
@@ -273,14 +289,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F17779981A433C7200091943 /* Presenter.swift in Sources */,
+				F1E4F8D51A49C30700709469 /* View.swift in Sources */,
+				F1E4F8D31A49C30700709469 /* ViewController.swift in Sources */,
 				F17779A31A44CCD900091943 /* AppDelegateTests.swift in Sources */,
-				F17779921A433B1D00091943 /* AppDelegate.swift in Sources */,
-				F17779911A433B1A00091943 /* ViewController.swift in Sources */,
-				F17779951A433B8400091943 /* View.swift in Sources */,
-				F177799D1A436F8500091943 /* Wireframe.swift in Sources */,
+				F1E4F8D61A49C30700709469 /* Interactor.swift in Sources */,
+				F1E4F8DB1A49CBA000709469 /* BathTests.swift in Sources */,
+				F1E4F8D71A49C30700709469 /* Presenter.swift in Sources */,
+				F1E4F8D81A49C30700709469 /* Wireframe.swift in Sources */,
+				F1E4F8D91A49C3EF00709469 /* Bath.swift in Sources */,
+				F1E4F8CE1A49BD1E00709469 /* InteractorTests.swift in Sources */,
 				F177798F1A43388500091943 /* WireframeTests.swift in Sources */,
-				F17779A01A43945C00091943 /* Interactor.swift in Sources */,
+				F1E4F8D21A49C30700709469 /* AppDelegate.swift in Sources */,
+				F1E4F8DD1A49CCAA00709469 /* PresenterTests.swift in Sources */,
 				F177799A1A433CD800091943 /* ViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
