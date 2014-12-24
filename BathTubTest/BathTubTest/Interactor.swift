@@ -18,8 +18,17 @@ class Interactor: NSObject {
     var bath: Bath?
     
     func fetchWaterLevel() {
+        sendWaterLevel()
+    }
+    
+    func openColdTap() {
+        bath?.fillColdWater()
+        sendWaterLevel()
+    }
+    
+    func sendWaterLevel() {
         let waterLevel = bath?.waterLevel()
-        delegate?.updateWaterLevel(0)
+        delegate?.updateWaterLevel(waterLevel!)
     }
     
 }

@@ -13,29 +13,36 @@ import BathTubTest
 
 class MockBath: Bath {
     var waterLevelCalled = false
+    var fillColdWaterCalled = false
     override func waterLevel() -> Float {
         waterLevelCalled = true
-        return 0
+        return 15.2
+    }
+    override func fillColdWater() {
+        fillColdWaterCalled = true
     }
 }
 
 class MockDelegate: InteractorDelegate {
     var updateWaterLevelCalled = false
+    var waterLevelBeingPassed = Float(-1)
     func updateWaterLevel(level: Float) {
         updateWaterLevelCalled = true
+        waterLevelBeingPassed = level
     }
 }
 
 class InteractorTests: XCTestCase {
 
-    var interactor: Interactor!
-    var bath: Bath!
+    let interactor = Interactor()
+    let mockBath = MockBath()
+    let mockDelegate = MockDelegate()
     
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        bath = Bath()
-        interactor = Interactor()
+        interactor.bath = mockBath
+        interactor.delegate = mockDelegate
     }
     
     override func tearDown() {
@@ -44,16 +51,27 @@ class InteractorTests: XCTestCase {
     }
     
     func testInteractorGetsWaterLevelFromBath() {
-        let mockBath = MockBath()
-        interactor.bath = mockBath
         interactor.fetchWaterLevel()
         XCTAssertTrue(mockBath.waterLevelCalled)
     }
     
     func testInteractorSendsWaterLevelToPresenter() {
-        let delegate = MockDelegate()
-        interactor.delegate = delegate
         interactor.fetchWaterLevel()
-        XCTAssertTrue(delegate.updateWaterLevelCalled)
+        XCTAssertTrue(mockDelegate.updateWaterLevelCalled)
+    }
+    
+    func testInteractorFillsBathWithWaterWhenTapIsOn() {
+        interactor.openColdTap()
+        XCTAssertTrue(mockBath.fillColdWaterCalled)
+    }
+    
+    func testInteractorSendsWaterLevelWhenItFillsColdWater() {
+        interactor.openColdTap()
+        XCTAssertTrue(mockDelegate.updateWaterLevelCalled)
+    }
+    
+    func testInteractorSendsCorrectWaterLevel() {
+        interactor.sendWaterLevel()
+        XCTAssertEqualWithAccuracy(mockDelegate.waterLevelBeingPassed, Float(15.2), 0)
     }
 }

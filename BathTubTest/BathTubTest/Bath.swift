@@ -15,4 +15,8 @@ class Bath: NSObject {
     internal func waterLevel() -> Float {
         return litresFull
     }
+    
+    func fillColdWater() {
+        litresFull = 150
+    }
 }

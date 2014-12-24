@@ -21,8 +21,12 @@ class MockView: View {
 
 class MockInteractor: Interactor {
     var fetchWaterLevelCalled = false
+    var openColdTapCalled = false
     override func fetchWaterLevel() {
         fetchWaterLevelCalled = true
+    }
+    override func openColdTap() {
+        openColdTapCalled = true
     }
 }
 
@@ -57,5 +61,11 @@ class PresenterTests: XCTestCase {
         presenter.interactor = mockInteractor
         presenter.viewDidLoad()
         XCTAssertTrue(mockInteractor.fetchWaterLevelCalled)
+    }
+    
+    func testPresenterTellsInteractorToOpenColdTap() {
+        presenter.interactor = mockInteractor
+        presenter.coldWaterTapDidOpen()
+        XCTAssertTrue(mockInteractor.openColdTapCalled)
     }
 }

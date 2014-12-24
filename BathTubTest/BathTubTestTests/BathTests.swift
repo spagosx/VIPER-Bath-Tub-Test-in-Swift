@@ -11,6 +11,8 @@ import XCTest
 
 class BathTests: XCTestCase {
 
+    var bath = Bath()
+    
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -22,9 +24,14 @@ class BathTests: XCTestCase {
     }
 
     func testWaterLevelReturnTheFillLevelOfTheBath() {
-        let bath = Bath()
         bath.litresFull = 50
         let level = bath.waterLevel()
         XCTAssertEqualWithAccuracy(level, bath.litresFull, 0)
+    }
+    
+    func testFillColdWaterUpdatesLitresFullVarCorrectly() {
+        bath.fillColdWater()
+        let amount = 150
+        XCTAssertEqualWithAccuracy(bath.waterLevel(), Float(150), 0)
     }
 }

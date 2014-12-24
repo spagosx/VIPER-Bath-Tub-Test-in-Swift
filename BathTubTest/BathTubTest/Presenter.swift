@@ -15,10 +15,17 @@ class Presenter: NSObject {
     func viewDidLoad() {
         interactor.fetchWaterLevel()
     }
+    
+    func coldWaterTapDidOpen() {
+        interactor.openColdTap()
+    }
+
 }
 
 extension Presenter: InteractorDelegate {
+    
     func updateWaterLevel(level: Float) {
         view.updateWaterLevel("\(level)")
     }
+    
 }

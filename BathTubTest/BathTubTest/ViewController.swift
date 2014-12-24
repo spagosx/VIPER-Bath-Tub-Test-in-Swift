@@ -12,6 +12,7 @@ class ViewController: UIViewController, View {
     
     var presenter: Presenter! = nil
     @IBOutlet var waterLevelLabel: UILabel?
+    @IBOutlet var coldTapButton: UIButton?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,10 @@ class ViewController: UIViewController, View {
         
     func updateWaterLevel(level: String) {
         waterLevelLabel?.text = level
+    }
+    
+    @IBAction func coldTapButtonDidOpen() {
+        presenter.coldWaterTapDidOpen()
     }
     
 }

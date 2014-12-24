@@ -11,8 +11,12 @@ import XCTest
 
 class MockPresenter: Presenter {
     var viewDidLoadCalled = false
+    var coldWaterTapDidOpenCalled = false
     override func viewDidLoad() {
         viewDidLoadCalled = true
+    }
+    override func coldWaterTapDidOpen() {
+        coldWaterTapDidOpenCalled = true
     }
 }
 
@@ -48,6 +52,17 @@ class ViewControllerTests: XCTestCase {
     
     func testViewControllerCallsViewDidUpdate() {
         XCTAssertTrue(mockPresenter.viewDidLoadCalled)
+    }
+    
+    func testViewControllerCallsPresenterForColdWaterTapOpen() {
+        sut.coldTapButtonDidOpen()
+        XCTAssertTrue(mockPresenter.coldWaterTapDidOpenCalled)
+    }
+    
+    func testColdTapButtonHasActionConnected() {
+        let actions = sut.coldTapButton?.actionsForTarget(sut, forControlEvent: .TouchUpInside) as? [String]
+        let hasAction = contains(actions!, "coldTapButtonDidOpen")
+        XCTAssertTrue(hasAction)
     }
     
 }

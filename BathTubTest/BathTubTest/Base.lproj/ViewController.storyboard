@@ -22,10 +22,20 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IVl-iR-UKD">
+                                <rect key="frame" x="340" y="302" width="56" height="30"/>
+                                <state key="normal" title="cold tap">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="coldTapButtonDidOpen" destination="vXZ-lx-hvc" eventType="touchUpInside" id="J6U-1i-qOx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="coldTapButton" destination="IVl-iR-UKD" id="r7m-0z-hBJ"/>
                         <outlet property="waterLevelLabel" destination="Qru-e0-KaW" id="heY-Sb-CCJ"/>
                     </connections>
                 </viewController>
