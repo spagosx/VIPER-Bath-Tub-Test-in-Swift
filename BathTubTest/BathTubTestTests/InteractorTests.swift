@@ -151,6 +151,16 @@ class InteractorTests: XCTestCase {
         XCTAssertEqual(mockBath.fillHotWaterMessageCount, 1)
     }
     
+    //MARK: Both Taps Coverage
+    
+    func testInteractorManagesBothTapsOpen() {
+        interactor.toggleColdTap()
+        interactor.toggleHotTap()
+        waitInRunLoopWithDelay(2)
+        XCTAssertEqual(mockBath.fillColdWaterMessageCount, 2)
+        XCTAssertEqual(mockBath.fillHotWaterMessageCount, 2)
+    }
+    
     //MARK: Convenience 
     
     func waitInRunLoopWithDelay(delay: NSTimeInterval) {
