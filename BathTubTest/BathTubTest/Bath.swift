@@ -19,4 +19,9 @@ class Bath: NSObject {
     func fillColdWater(level: Float) {
         litresFull += level
     }
+    
+    func fillHotWater(level: Float) {
+        litresFull += level
+    }
+    
 }

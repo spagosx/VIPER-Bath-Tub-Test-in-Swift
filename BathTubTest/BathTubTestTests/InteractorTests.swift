@@ -13,17 +13,30 @@ import BathTubTest
 
 class MockBath: Bath {
     var waterLevelCalled = false
-    var fillColdWaterCalled = false
-    var coldWaterAmountFilled: Float = 0
-    var fillColdWaterMessageCount = 0
+    
     override func waterLevel() -> Float {
         waterLevelCalled = true
         return 15.2
     }
+
+    var fillColdWaterCalled = false
+    var coldWaterAmountFilled: Float = 0
+    var fillColdWaterMessageCount = 0
+
     override func fillColdWater(level: Float) {
         fillColdWaterCalled = true
         coldWaterAmountFilled = level
         fillColdWaterMessageCount++
+    }
+    
+    var fillHotWaterCalled = false
+    var hotWaterAmountFilled: Float = 0
+    var fillHotWaterMessageCount = 0
+    
+    override func fillHotWater(level: Float) {
+        fillHotWaterCalled = true
+        hotWaterAmountFilled = level
+        fillHotWaterMessageCount++
     }
 }
 
@@ -65,7 +78,14 @@ class InteractorTests: XCTestCase {
         XCTAssertTrue(mockDelegate.updateWaterLevelCalled)
     }
     
-    func testInteractorFillsBathWithWaterWhenTapIsOn() {
+    func testInteractorSendsCorrectWaterLevel() {
+        interactor.sendWaterLevel()
+        XCTAssertEqualWithAccuracy(mockDelegate.waterLevelBeingPassed, Float(15.2), 0)
+    }
+    
+    // MARK: Cold Tap
+    
+    func testInteractorFillsBathWithWaterWhenColdTapIsOn() {
         interactor.toggleColdTap()
         waitInRunLoopWithDelay(1)
         XCTAssertTrue(mockBath.fillColdWaterCalled)
@@ -77,18 +97,13 @@ class InteractorTests: XCTestCase {
         XCTAssertTrue(mockDelegate.updateWaterLevelCalled)
     }
     
-    func testInteractorSendsCorrectWaterLevel() {
-        interactor.sendWaterLevel()
-        XCTAssertEqualWithAccuracy(mockDelegate.waterLevelBeingPassed, Float(15.2), 0)
-    }
-    
     func testInteractorFillsColdWaterWithCorrectAmountPerSecond() {
         interactor.toggleColdTap()
         waitInRunLoopWithDelay(1)
         XCTAssertEqualWithAccuracy(mockBath.coldWaterAmountFilled, Float(0.2), 0)
     }
     
-    func testInteractorFillBathEverySecond() {
+    func testInteractorFillBathWithColdWaterEverySecond() {
         interactor.toggleColdTap()
         waitInRunLoopWithDelay(3)
         XCTAssertEqual(mockBath.fillColdWaterMessageCount, 3)
@@ -100,6 +115,40 @@ class InteractorTests: XCTestCase {
         interactor.toggleColdTap()
         waitInRunLoopWithDelay(1)
         XCTAssertEqual(mockBath.fillColdWaterMessageCount, 1)
+    }
+    
+    //MARK: Hot Tap
+    
+    func testInteractorFillsBathWithWaterWhenHotTapIsOn() {
+        interactor.toggleHotTap()
+        waitInRunLoopWithDelay(1)
+        XCTAssertTrue(mockBath.fillHotWaterCalled)
+    }
+    
+    func testInteractorSendsWaterLevelWhenItFillsHotWater() {
+        interactor.toggleHotTap()
+        waitInRunLoopWithDelay(1)
+        XCTAssertTrue(mockDelegate.updateWaterLevelCalled)
+    }
+    
+    func testInteractorFillsHotWaterWithCorrectAmountPerSecond() {
+        interactor.toggleHotTap()
+        waitInRunLoopWithDelay(1)
+        XCTAssertEqualWithAccuracy(mockBath.hotWaterAmountFilled, Float(0.16), 0.01)
+    }
+    
+    func testInteractorFillsBathWithHotWaterEverySecond() {
+        interactor.toggleHotTap()
+        waitInRunLoopWithDelay(3)
+        XCTAssertEqual(mockBath.fillHotWaterMessageCount, 3)
+    }
+    
+    func testInteractorStopsFlowForClosingHotWaterTap() {
+        interactor.toggleHotTap()
+        waitInRunLoopWithDelay(1)
+        interactor.toggleHotTap()
+        waitInRunLoopWithDelay(1)
+        XCTAssertEqual(mockBath.fillHotWaterMessageCount, 1)
     }
     
     //MARK: Convenience 

@@ -13,6 +13,7 @@ class ViewController: UIViewController, View {
     var presenter: Presenter! = nil
     @IBOutlet var waterLevelLabel: UILabel?
     @IBOutlet var coldTapButton: UIButton?
+    @IBOutlet var hotTapButton: UIButton?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +31,10 @@ class ViewController: UIViewController, View {
     
     @IBAction func coldTapButtonDidReceiveTap() {
         presenter.coldWaterTapDidReceiveTap()
+    }
+    
+    @IBAction func hotTapButtonDidReceiveTap() {
+        presenter.hotWaterTapDidReceiveTap()
     }
     
 }

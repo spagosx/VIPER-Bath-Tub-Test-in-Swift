@@ -42,4 +42,11 @@ class BathTests: XCTestCase {
         XCTAssertEqualWithAccuracy(bath.waterLevel(), Float(3), 0)
     }
     
+    func testFillHotWaterAddsWaterCorrectly() {
+        for var i = 0; i < 3; i++ {
+            bath.fillHotWater(1)
+        }
+        XCTAssertEqualWithAccuracy(bath.waterLevel(), Float(3), 0)
+    }
+    
 }

@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qru-e0-KaW">
-                                <rect key="frame" x="254" y="146" width="42" height="21"/>
+                                <rect key="frame" x="254" y="146" width="153" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -31,11 +31,21 @@
                                     <action selector="coldTapButtonDidReceiveTap" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ycR-lO-6re"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sje-en-02r">
+                                <rect key="frame" x="177" y="297" width="49" height="30"/>
+                                <state key="normal" title="hot tap">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="hotTapButtonDidReceiveTap" destination="vXZ-lx-hvc" eventType="touchUpInside" id="LWO-n6-gF1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="coldTapButton" destination="IVl-iR-UKD" id="r7m-0z-hBJ"/>
+                        <outlet property="hotTapButton" destination="sje-en-02r" id="8qc-Pz-Qf0"/>
                         <outlet property="waterLevelLabel" destination="Qru-e0-KaW" id="heY-Sb-CCJ"/>
                     </connections>
                 </viewController>

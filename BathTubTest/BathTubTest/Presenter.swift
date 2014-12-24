@@ -19,6 +19,10 @@ class Presenter: NSObject {
     func coldWaterTapDidReceiveTap() {
         interactor.toggleColdTap()
     }
+    
+    func hotWaterTapDidReceiveTap() {
+        interactor.toggleHotTap()
+    }
 
 }
 
