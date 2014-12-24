@@ -28,8 +28,8 @@ class ViewController: UIViewController, View {
         waterLevelLabel?.text = level
     }
     
-    @IBAction func coldTapButtonDidOpen() {
-        presenter.coldWaterTapDidOpen()
+    @IBAction func coldTapButtonDidReceiveTap() {
+        presenter.coldWaterTapDidReceiveTap()
     }
     
 }

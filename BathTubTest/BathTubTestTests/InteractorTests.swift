@@ -51,6 +51,7 @@ class InteractorTests: XCTestCase {
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
+        mockBath.fillColdWaterMessageCount = 0
         super.tearDown()
     }
     
@@ -65,16 +66,14 @@ class InteractorTests: XCTestCase {
     }
     
     func testInteractorFillsBathWithWaterWhenTapIsOn() {
-        interactor.openColdTap()
-        let waitTime = NSDate(timeIntervalSinceNow: 1)
-        NSRunLoop.currentRunLoop().runUntilDate(waitTime)
+        interactor.toggleColdTap()
+        waitInRunLoopWithDelay(1)
         XCTAssertTrue(mockBath.fillColdWaterCalled)
     }
     
     func testInteractorSendsWaterLevelWhenItFillsColdWater() {
-        interactor.openColdTap()
-        let waitTime = NSDate(timeIntervalSinceNow: 1)
-        NSRunLoop.currentRunLoop().runUntilDate(waitTime)
+        interactor.toggleColdTap()
+        waitInRunLoopWithDelay(1)
         XCTAssertTrue(mockDelegate.updateWaterLevelCalled)
     }
     
@@ -84,16 +83,30 @@ class InteractorTests: XCTestCase {
     }
     
     func testInteractorFillsColdWaterWithCorrectAmountPerSecond() {
-        interactor.openColdTap()
-        let waitTime = NSDate(timeIntervalSinceNow: 1)
-        NSRunLoop.currentRunLoop().runUntilDate(waitTime)
+        interactor.toggleColdTap()
+        waitInRunLoopWithDelay(1)
         XCTAssertEqualWithAccuracy(mockBath.coldWaterAmountFilled, Float(0.2), 0)
     }
     
     func testInteractorFillBathEverySecond() {
-        interactor.openColdTap()
-        let waitTime = NSDate(timeIntervalSinceNow: 3)
-        NSRunLoop.currentRunLoop().runUntilDate(waitTime)
+        interactor.toggleColdTap()
+        waitInRunLoopWithDelay(3)
         XCTAssertEqual(mockBath.fillColdWaterMessageCount, 3)
     }
+    
+    func testInteractorStopsFlowForClosingColdWaterTap() {
+        interactor.toggleColdTap()
+        waitInRunLoopWithDelay(1)
+        interactor.toggleColdTap()
+        waitInRunLoopWithDelay(1)
+        XCTAssertEqual(mockBath.fillColdWaterMessageCount, 1)
+    }
+    
+    //MARK: Convenience 
+    
+    func waitInRunLoopWithDelay(delay: NSTimeInterval) {
+        let waitTilDate = NSDate(timeIntervalSinceNow: delay)
+        NSRunLoop.currentRunLoop().runUntilDate(waitTilDate)
+    }
+    
 }

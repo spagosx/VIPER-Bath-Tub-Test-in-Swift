@@ -28,7 +28,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="coldTapButtonDidOpen" destination="vXZ-lx-hvc" eventType="touchUpInside" id="J6U-1i-qOx"/>
+                                    <action selector="coldTapButtonDidReceiveTap" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ycR-lO-6re"/>
                                 </connections>
                             </button>
                         </subviews>

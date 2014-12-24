@@ -16,8 +16,8 @@ class Presenter: NSObject {
         interactor.fetchWaterLevel()
     }
     
-    func coldWaterTapDidOpen() {
-        interactor.openColdTap()
+    func coldWaterTapDidReceiveTap() {
+        interactor.toggleColdTap()
     }
 
 }

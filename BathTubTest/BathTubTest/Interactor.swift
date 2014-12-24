@@ -19,13 +19,27 @@ class Interactor: NSObject {
     
     let coldWaterFillRate: Float = 12
     
+    var coldWaterTimer: NSTimer?
+    
     func fetchWaterLevel() {
         sendWaterLevel()
     }
     
+    func toggleColdTap() {
+        if coldWaterTimer == nil {
+            openColdTap()
+        } else {
+            closeColdTap()
+        }
+    }
+    
     func openColdTap() {
-        let coldWaterTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("fillColdWater"), userInfo: nil, repeats: true)
-        
+        coldWaterTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("fillColdWater"), userInfo: nil, repeats: true)
+    }
+    
+    func closeColdTap() {
+        coldWaterTimer?.invalidate()
+        coldWaterTimer = nil
     }
     
     func fillColdWater() {
@@ -41,5 +55,6 @@ class Interactor: NSObject {
         let waterLevel = bath?.waterLevel()
         delegate?.updateWaterLevel(waterLevel!)
     }
+    
     
 }
