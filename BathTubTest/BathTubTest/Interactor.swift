@@ -17,13 +17,24 @@ class Interactor: NSObject {
     weak var delegate: InteractorDelegate? = nil
     var bath: Bath?
     
+    let coldWaterFillRate: Float = 12
+    
     func fetchWaterLevel() {
         sendWaterLevel()
     }
     
     func openColdTap() {
-        bath?.fillColdWater()
+        let coldWaterTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("fillColdWater"), userInfo: nil, repeats: true)
+        
+    }
+    
+    func fillColdWater() {
+        bath?.fillColdWater(coldWaterRatePerSecond())
         sendWaterLevel()
+    }
+    
+    func coldWaterRatePerSecond() -> Float {
+        return Float(coldWaterFillRate / Float(60))
     }
     
     func sendWaterLevel() {

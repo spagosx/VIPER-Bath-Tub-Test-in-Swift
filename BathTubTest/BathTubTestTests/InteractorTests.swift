@@ -14,12 +14,16 @@ import BathTubTest
 class MockBath: Bath {
     var waterLevelCalled = false
     var fillColdWaterCalled = false
+    var coldWaterAmountFilled: Float = 0
+    var fillColdWaterMessageCount = 0
     override func waterLevel() -> Float {
         waterLevelCalled = true
         return 15.2
     }
-    override func fillColdWater() {
+    override func fillColdWater(level: Float) {
         fillColdWaterCalled = true
+        coldWaterAmountFilled = level
+        fillColdWaterMessageCount++
     }
 }
 
@@ -62,16 +66,34 @@ class InteractorTests: XCTestCase {
     
     func testInteractorFillsBathWithWaterWhenTapIsOn() {
         interactor.openColdTap()
+        let waitTime = NSDate(timeIntervalSinceNow: 1)
+        NSRunLoop.currentRunLoop().runUntilDate(waitTime)
         XCTAssertTrue(mockBath.fillColdWaterCalled)
     }
     
     func testInteractorSendsWaterLevelWhenItFillsColdWater() {
         interactor.openColdTap()
+        let waitTime = NSDate(timeIntervalSinceNow: 1)
+        NSRunLoop.currentRunLoop().runUntilDate(waitTime)
         XCTAssertTrue(mockDelegate.updateWaterLevelCalled)
     }
     
     func testInteractorSendsCorrectWaterLevel() {
         interactor.sendWaterLevel()
         XCTAssertEqualWithAccuracy(mockDelegate.waterLevelBeingPassed, Float(15.2), 0)
+    }
+    
+    func testInteractorFillsColdWaterWithCorrectAmountPerSecond() {
+        interactor.openColdTap()
+        let waitTime = NSDate(timeIntervalSinceNow: 1)
+        NSRunLoop.currentRunLoop().runUntilDate(waitTime)
+        XCTAssertEqualWithAccuracy(mockBath.coldWaterAmountFilled, Float(0.2), 0)
+    }
+    
+    func testInteractorFillBathEverySecond() {
+        interactor.openColdTap()
+        let waitTime = NSDate(timeIntervalSinceNow: 3)
+        NSRunLoop.currentRunLoop().runUntilDate(waitTime)
+        XCTAssertEqual(mockBath.fillColdWaterMessageCount, 3)
     }
 }

@@ -30,8 +30,16 @@ class BathTests: XCTestCase {
     }
     
     func testFillColdWaterUpdatesLitresFullVarCorrectly() {
-        bath.fillColdWater()
+        bath.fillColdWater(150)
         let amount = 150
         XCTAssertEqualWithAccuracy(bath.waterLevel(), Float(150), 0)
     }
+    
+    func testFillColdWaterAddsWaterCorrectly() {
+        for var i = 0; i < 3; i++ {
+            bath.fillColdWater(1)
+        }
+        XCTAssertEqualWithAccuracy(bath.waterLevel(), Float(3), 0)
+    }
+    
 }
