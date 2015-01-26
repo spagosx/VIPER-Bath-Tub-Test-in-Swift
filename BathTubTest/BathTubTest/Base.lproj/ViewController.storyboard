@@ -16,23 +16,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qru-e0-KaW">
-                                <rect key="frame" x="254" y="146" width="153" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qru-e0-KaW">
+                                <rect key="frame" x="279" y="146" width="42" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IVl-iR-UKD">
-                                <rect key="frame" x="340" y="302" width="56" height="30"/>
-                                <state key="normal" title="cold tap">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="coldTapButtonDidReceiveTap" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ycR-lO-6re"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sje-en-02r">
-                                <rect key="frame" x="177" y="297" width="49" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sje-en-02r">
+                                <rect key="frame" x="180.5" y="297" width="49" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="49" id="bhy-mi-Mxm"/>
+                                    <constraint firstAttribute="height" constant="30" id="by6-61-AH8"/>
+                                </constraints>
                                 <state key="normal" title="hot tap">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -40,8 +35,29 @@
                                     <action selector="hotTapButtonDidReceiveTap" destination="vXZ-lx-hvc" eventType="touchUpInside" id="LWO-n6-gF1"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IVl-iR-UKD">
+                                <rect key="frame" x="340" y="297" width="56" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="CPd-Eb-jpD"/>
+                                    <constraint firstAttribute="width" constant="56" id="zrh-T5-xn5"/>
+                                </constraints>
+                                <state key="normal" title="cold tap">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="coldTapButtonDidReceiveTap" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ycR-lO-6re"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="IVl-iR-UKD" secondAttribute="bottom" constant="273" id="9l9-EA-R13"/>
+                            <constraint firstAttribute="centerX" secondItem="IVl-iR-UKD" secondAttribute="centerX" constant="-68" id="EMC-HC-pDh"/>
+                            <constraint firstAttribute="centerX" secondItem="sje-en-02r" secondAttribute="centerX" constant="95" id="YzR-vh-Wnr"/>
+                            <constraint firstAttribute="centerX" secondItem="Qru-e0-KaW" secondAttribute="centerX" id="emP-GD-Up4"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="sje-en-02r" secondAttribute="bottom" constant="273" id="hZe-cj-lZR"/>
+                            <constraint firstItem="Qru-e0-KaW" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="126" id="wEc-rF-ZbX"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="coldTapButton" destination="IVl-iR-UKD" id="r7m-0z-hBJ"/>

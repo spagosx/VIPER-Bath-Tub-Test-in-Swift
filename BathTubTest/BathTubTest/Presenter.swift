@@ -29,7 +29,8 @@ class Presenter: NSObject {
 extension Presenter: InteractorDelegate {
     
     func updateWaterLevel(level: Float) {
-        view.updateWaterLevel("\(level)")
+        let formattedLevel = String(format: "%.2f", level)
+        view.updateWaterLevel("\(formattedLevel)")
     }
     
 }

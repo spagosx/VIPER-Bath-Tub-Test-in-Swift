@@ -58,8 +58,8 @@ class PresenterTests: XCTestCase {
     }
     
     func testPresenterPassCorrectStringForWaterLevel() {
-        presenter.updateWaterLevel(102.7)
-        XCTAssertEqual(mockView.levelString, "102.7")
+        presenter.updateWaterLevel(102.70)
+        XCTAssertEqual(mockView.levelString, "102.70")
     }
     
     func testPresenterAsksInteractorToFetchWaterLevelOnViewDidLoad() {
@@ -79,4 +79,10 @@ class PresenterTests: XCTestCase {
         presenter.hotWaterTapDidReceiveTap()
         XCTAssertTrue(mockInteractor.openHotTapCalled)
     }
+    
+    func testUpdatesWaterLevelOnlyTwoDecimalDigits() {
+        presenter.updateWaterLevel(100.12345)
+        XCTAssertEqual(mockView.levelString, "100.12")
+    }
+    
 }
