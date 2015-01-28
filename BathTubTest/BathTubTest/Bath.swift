@@ -10,18 +10,26 @@ import UIKit
 
 class Bath: NSObject {
     
-    var litresFull: Float = 0
+    private var coldWaterLitres: Float = 0
+    private var hotWaterLitres: Float = 0
     
     internal func waterLevel() -> Float {
-        return litresFull
+        return hotWaterLitres + coldWaterLitres
     }
     
     func fillColdWater(level: Float) {
-        litresFull += level
+        coldWaterLitres += level
     }
     
     func fillHotWater(level: Float) {
-        litresFull += level
+        hotWaterLitres += level
     }
     
+    func coldWaterLevel() -> Float {
+        return coldWaterLitres
+    }
+    
+    func hotWaterLevel() -> Float {
+        return hotWaterLitres
+    }
 }
