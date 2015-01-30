@@ -9,55 +9,6 @@
 import UIKit
 import XCTest
 
-import BathTubTest
-
-class MockBath: Bath {
-    var waterLevelCalled = false
-    
-    override func waterLevel() -> Float {
-        waterLevelCalled = true
-        return 15.2
-    }
-
-    var fillColdWaterCalled = false
-    var coldWaterAmountFilled: Float = 0
-    var fillColdWaterMessageCount = 0
-
-    override func fillColdWater(level: Float) {
-        fillColdWaterCalled = true
-        coldWaterAmountFilled = level
-        fillColdWaterMessageCount++
-        super.fillColdWater(level)
-    }
-    
-    var fillHotWaterCalled = false
-    var hotWaterAmountFilled: Float = 0
-    var fillHotWaterMessageCount = 0
-    
-    override func fillHotWater(level: Float) {
-        fillHotWaterCalled = true
-        hotWaterAmountFilled = level
-        fillHotWaterMessageCount++
-        super.fillHotWater(level)
-    }
-}
-
-class MockDelegate: InteractorDelegate {
-    var updateWaterLevelCalled = false
-    var waterLevelBeingPassed = Float(-1)
-    func updateWaterLevel(level: Float) {
-        updateWaterLevelCalled = true
-        waterLevelBeingPassed = level
-    }
-    
-    var updateTemperatureCalled = false
-    var temperatureValue: Float = 0
-    func updateTemperature(temperature: Float) {
-        updateTemperatureCalled = true
-        temperatureValue = temperature
-    }
-}
-
 class InteractorTests: XCTestCase {
 
     let interactor = Interactor()

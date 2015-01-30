@@ -10,6 +10,10 @@
 		F145DF5A1A797F830027A9FC /* ThermometerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F145DF591A797F830027A9FC /* ThermometerTests.swift */; };
 		F145DF5E1A7980230027A9FC /* Thermometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F145DF5D1A7980230027A9FC /* Thermometer.swift */; };
 		F145DF5F1A7981090027A9FC /* Thermometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F145DF5D1A7980230027A9FC /* Thermometer.swift */; };
+		F145DF621A7C2C3D0027A9FC /* MockInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F145DF611A7C2C3D0027A9FC /* MockInteractor.swift */; };
+		F145DF641A7C2C680027A9FC /* MockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F145DF631A7C2C680027A9FC /* MockView.swift */; };
+		F145DF661A7C337C0027A9FC /* MockBath.swift in Sources */ = {isa = PBXBuildFile; fileRef = F145DF651A7C337C0027A9FC /* MockBath.swift */; };
+		F145DF681A7C33A20027A9FC /* MockInteractorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F145DF671A7C33A20027A9FC /* MockInteractorDelegate.swift */; };
 		F177796F1A4327EE00091943 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F177796E1A4327EE00091943 /* AppDelegate.swift */; };
 		F17779711A4327EE00091943 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17779701A4327EE00091943 /* ViewController.swift */; };
 		F17779741A4327EE00091943 /* ViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F17779721A4327EE00091943 /* ViewController.storyboard */; };
@@ -49,6 +53,10 @@
 /* Begin PBXFileReference section */
 		F145DF591A797F830027A9FC /* ThermometerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThermometerTests.swift; sourceTree = "<group>"; };
 		F145DF5D1A7980230027A9FC /* Thermometer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Thermometer.swift; sourceTree = "<group>"; };
+		F145DF611A7C2C3D0027A9FC /* MockInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockInteractor.swift; sourceTree = "<group>"; };
+		F145DF631A7C2C680027A9FC /* MockView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockView.swift; sourceTree = "<group>"; };
+		F145DF651A7C337C0027A9FC /* MockBath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockBath.swift; sourceTree = "<group>"; };
+		F145DF671A7C33A20027A9FC /* MockInteractorDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockInteractorDelegate.swift; sourceTree = "<group>"; };
 		F17779691A4327EE00091943 /* BathTubTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BathTubTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F177796D1A4327EE00091943 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F177796E1A4327EE00091943 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +97,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F145DF601A7C2C240027A9FC /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				F145DF611A7C2C3D0027A9FC /* MockInteractor.swift */,
+				F145DF631A7C2C680027A9FC /* MockView.swift */,
+				F145DF651A7C337C0027A9FC /* MockBath.swift */,
+				F145DF671A7C33A20027A9FC /* MockInteractorDelegate.swift */,
+			);
+			name = Mocks;
+			sourceTree = "<group>";
+		};
 		F17779601A4327EE00091943 = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +153,7 @@
 		F17779811A4327EE00091943 /* BathTubTestTests */ = {
 			isa = PBXGroup;
 			children = (
+				F145DF601A7C2C240027A9FC /* Mocks */,
 				F17779A41A44D09A00091943 /* VIPER Tests */,
 				F17779A51A44D0A400091943 /* App Side Tests */,
 				F17779821A4327EE00091943 /* Supporting Files */,
@@ -300,7 +320,9 @@
 				F145DF5A1A797F830027A9FC /* ThermometerTests.swift in Sources */,
 				F1E4F8D51A49C30700709469 /* View.swift in Sources */,
 				F1E4F8D31A49C30700709469 /* ViewController.swift in Sources */,
+				F145DF641A7C2C680027A9FC /* MockView.swift in Sources */,
 				F17779A31A44CCD900091943 /* AppDelegateTests.swift in Sources */,
+				F145DF621A7C2C3D0027A9FC /* MockInteractor.swift in Sources */,
 				F1E4F8D61A49C30700709469 /* Interactor.swift in Sources */,
 				F145DF5F1A7981090027A9FC /* Thermometer.swift in Sources */,
 				F1E4F8DB1A49CBA000709469 /* BathTests.swift in Sources */,
@@ -311,7 +333,9 @@
 				F177798F1A43388500091943 /* WireframeTests.swift in Sources */,
 				F1E4F8D21A49C30700709469 /* AppDelegate.swift in Sources */,
 				F1E4F8DD1A49CCAA00709469 /* PresenterTests.swift in Sources */,
+				F145DF661A7C337C0027A9FC /* MockBath.swift in Sources */,
 				F177799A1A433CD800091943 /* ViewControllerTests.swift in Sources */,
+				F145DF681A7C33A20027A9FC /* MockInteractorDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
