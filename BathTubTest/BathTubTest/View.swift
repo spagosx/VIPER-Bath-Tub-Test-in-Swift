@@ -11,4 +11,5 @@ import Foundation
 protocol View: class {
     var presenter: Presenter! {get set}
     func updateWaterLevel(level: String)
+    func updateTemperature(temperature: String)
 }

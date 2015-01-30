@@ -27,6 +27,7 @@ class MockBath: Bath {
         fillColdWaterCalled = true
         coldWaterAmountFilled = level
         fillColdWaterMessageCount++
+        super.fillColdWater(level)
     }
     
     var fillHotWaterCalled = false
@@ -37,6 +38,7 @@ class MockBath: Bath {
         fillHotWaterCalled = true
         hotWaterAmountFilled = level
         fillHotWaterMessageCount++
+        super.fillHotWater(level)
     }
 }
 
@@ -46,6 +48,13 @@ class MockDelegate: InteractorDelegate {
     func updateWaterLevel(level: Float) {
         updateWaterLevelCalled = true
         waterLevelBeingPassed = level
+    }
+    
+    var updateTemperatureCalled = false
+    var temperatureValue: Float = 0
+    func updateTemperature(temperature: Float) {
+        updateTemperatureCalled = true
+        temperatureValue = temperature
     }
 }
 
@@ -159,6 +168,33 @@ class InteractorTests: XCTestCase {
         waitInRunLoopWithDelay(2)
         XCTAssertEqual(mockBath.fillColdWaterMessageCount, 2)
         XCTAssertEqual(mockBath.fillHotWaterMessageCount, 2)
+    }
+    
+    //MARK: Temperature
+    
+    func testInteractorSendsTemperatureWhenPrompted() {
+        interactor.sendTemperature()
+        XCTAssertTrue(mockDelegate.updateTemperatureCalled)
+    }
+    
+    func testInteractorPassesTemperatureFromThermometer() {
+        mockBath.fillColdWater(20)
+        mockBath.fillHotWater(20)
+        let coldWater = Water(amount: 20, temperature: 10)
+        let hotWater = Water(amount: 20, temperature: 50)
+        let temp = Thermometer.waterTemperature(coldWater: coldWater, hotWater: hotWater)
+        interactor.sendTemperature()
+        XCTAssertEqualWithAccuracy(mockDelegate.temperatureValue, temp, 0.1)
+    }
+    
+    func testUpdatesTemperatureAsColdWaterFills() {
+        interactor.fillColdWater()
+        XCTAssertTrue(mockDelegate.updateTemperatureCalled)
+    }
+    
+    func testUpdatesTemperatureAsHotWaterFills() {
+        interactor.fillHotWater()
+        XCTAssertTrue(mockDelegate.updateTemperatureCalled)
     }
     
     //MARK: Convenience 

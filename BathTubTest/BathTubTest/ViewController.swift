@@ -12,9 +12,11 @@ class ViewController: UIViewController, View {
     
     var presenter: Presenter! = nil
     @IBOutlet var waterLevelLabel: UILabel?
+    @IBOutlet var temperatureLabel: UILabel?
+    
     @IBOutlet var coldTapButton: UIButton?
     @IBOutlet var hotTapButton: UIButton?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.viewDidLoad()
@@ -27,6 +29,10 @@ class ViewController: UIViewController, View {
         
     func updateWaterLevel(level: String) {
         waterLevelLabel?.text = level
+    }
+    
+    func updateTemperature(temperature: String) {
+        temperatureLabel?.text = temperature
     }
     
     @IBAction func coldTapButtonDidReceiveTap() {

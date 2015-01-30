@@ -17,6 +17,12 @@ class MockView: View {
         updateWaterLevelCalled = true
         levelString = level
     }
+    var updateTemperatureStringCalled = false
+    var temperatureString: String!
+    func updateTemperature(temperature: String) {
+        updateTemperatureStringCalled = true
+        temperatureString = temperature
+    }
 }
 
 class MockInteractor: Interactor {
@@ -85,4 +91,13 @@ class PresenterTests: XCTestCase {
         XCTAssertEqual(mockView.levelString, "100.12")
     }
     
+    func testUpdatesTemperature() {
+        presenter.updateTemperature(30)
+        XCTAssertTrue(mockView.updateTemperatureStringCalled)
+    }
+    
+    func testUpdatesTemperatureWithCorrectValue() {
+        presenter.updateTemperature(20.2)
+        XCTAssertEqual(mockView.temperatureString, "20.2")
+    }
 }

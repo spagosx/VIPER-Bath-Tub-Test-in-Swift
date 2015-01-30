@@ -21,6 +21,9 @@ class WireframeTests: XCTestCase {
             private func updateWaterLevel(level: String) {
                 
             }
+            private func updateTemperature(temperature: String) {
+                
+            }
         }
         view = ViewClass()
         Wireframe.configureModules(view)
@@ -53,5 +56,5 @@ class WireframeTests: XCTestCase {
     func testWireFrameInteractorHasBathModel() {
         XCTAssertNotNil(view.presenter.interactor.bath)
     }
-
+    
 }

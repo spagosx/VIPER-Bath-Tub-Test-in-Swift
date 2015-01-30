@@ -85,5 +85,15 @@ class ViewControllerTests: XCTestCase {
         XCTAssertTrue(hasAction)
     }
 
+    func testTemperatureLabelOutletConnected() {
+        sut.viewDidLoad()
+        XCTAssertNotNil(sut.temperatureLabel)
+    }
+    
+    func testUpdatesTemperatureLabel() {
+        sut.updateTemperature("20")
+        let equalText = sut.temperatureLabel?.text == "20"
+        XCTAssertTrue(equalText)
+    }
     
 }

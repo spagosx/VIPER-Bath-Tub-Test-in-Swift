@@ -10,6 +10,7 @@ import UIKit
 
 protocol InteractorDelegate : class {
     func updateWaterLevel(level: Float)
+    func updateTemperature(temperature: Float)
 }
 
 class Interactor: NSObject {
@@ -47,6 +48,7 @@ class Interactor: NSObject {
     func fillColdWater() {
         bath?.fillColdWater(coldWaterRatePerSecond())
         sendWaterLevel()
+        sendTemperature()
     }
     
     func toggleHotTap() {
@@ -69,6 +71,7 @@ class Interactor: NSObject {
     func fillHotWater() {
         bath?.fillHotWater(hotWaterRatePerSecond())
         sendWaterLevel()
+        sendTemperature()
     }
     
     func coldWaterRatePerSecond() -> Float {
@@ -84,5 +87,18 @@ class Interactor: NSObject {
         delegate?.updateWaterLevel(waterLevel!)
     }
     
+    // MARK: Temperature
+    
+    func sendTemperature() {
+        let temp = fetchTemperature()
+        delegate?.updateTemperature(temp)
+    }
+    
+    func fetchTemperature() -> Float {
+        let coldWater = Water(amount:bath!.coldWaterLevel(), temperature: 10)
+        let hotWater = Water(amount: bath!.hotWaterLevel(), temperature: 50)
+        let temperature = Thermometer.waterTemperature(coldWater: coldWater, hotWater: hotWater)
+        return temperature
+    }
     
 }

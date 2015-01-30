@@ -48,6 +48,12 @@
                                     <action selector="coldTapButtonDidReceiveTap" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ycR-lO-6re"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J1N-hu-QFF">
+                                <rect key="frame" x="279" y="211" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -62,6 +68,7 @@
                     <connections>
                         <outlet property="coldTapButton" destination="IVl-iR-UKD" id="r7m-0z-hBJ"/>
                         <outlet property="hotTapButton" destination="sje-en-02r" id="8qc-Pz-Qf0"/>
+                        <outlet property="temperatureLabel" destination="J1N-hu-QFF" id="g8o-ed-gE2"/>
                         <outlet property="waterLevelLabel" destination="Qru-e0-KaW" id="heY-Sb-CCJ"/>
                     </connections>
                 </viewController>

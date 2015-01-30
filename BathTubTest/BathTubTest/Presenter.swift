@@ -33,4 +33,7 @@ extension Presenter: InteractorDelegate {
         view.updateWaterLevel("\(formattedLevel)")
     }
     
+    func updateTemperature(temperature: Float) {
+        view.updateTemperature("\(temperature)")
+    }
 }
