@@ -29,6 +29,7 @@ class MockInteractor: Interactor {
     var fetchWaterLevelCalled = false
     var openColdTapCalled = false
     var openHotTapCalled = false
+    var sendTempLevelCalled = false
     
     override func fetchWaterLevel() {
         fetchWaterLevelCalled = true
@@ -38,6 +39,10 @@ class MockInteractor: Interactor {
     }
     override func toggleHotTap() {
         openHotTapCalled = true
+    }
+    
+    override func sendTemperature() {
+        sendTempLevelCalled = true
     }
 }
 
@@ -51,11 +56,14 @@ class PresenterTests: XCTestCase {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
         presenter.view = mockView
+        presenter.interactor = mockInteractor
     }
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
+        presenter.view = nil
+        presenter.interactor = nil
     }
 
     func testPresenterCallsViewUpdateForWaterLevel() {
@@ -97,7 +105,17 @@ class PresenterTests: XCTestCase {
     }
     
     func testUpdatesTemperatureWithCorrectValue() {
-        presenter.updateTemperature(20.2)
-        XCTAssertEqual(mockView.temperatureString, "20.2")
+        presenter.updateTemperature(20.20)
+        XCTAssertEqual(mockView.temperatureString, "20.20")
+    }
+    
+    func testCallsForInitialTempOnViewDidLoad() {
+        presenter.viewDidLoad()
+        XCTAssertTrue(mockInteractor.sendTempLevelCalled)
+    }
+    
+    func testLimitsTempTwoFloatDigits() {
+        presenter.updateTemperature(102.353)
+        XCTAssertEqual(mockView.temperatureString, "102.35")
     }
 }

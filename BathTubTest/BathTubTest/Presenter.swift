@@ -14,6 +14,7 @@ class Presenter: NSObject {
     
     func viewDidLoad() {
         interactor.fetchWaterLevel()
+        interactor.sendTemperature()
     }
     
     func coldWaterTapDidReceiveTap() {
@@ -34,6 +35,7 @@ extension Presenter: InteractorDelegate {
     }
     
     func updateTemperature(temperature: Float) {
-        view.updateTemperature("\(temperature)")
+        let formattedTemp = String(format: "%.2f", temperature)
+        view.updateTemperature("\(formattedTemp)")
     }
 }

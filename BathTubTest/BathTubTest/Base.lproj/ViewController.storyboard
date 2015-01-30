@@ -48,7 +48,7 @@
                                     <action selector="coldTapButtonDidReceiveTap" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ycR-lO-6re"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J1N-hu-QFF">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J1N-hu-QFF">
                                 <rect key="frame" x="279" y="211" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -57,11 +57,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="J1N-hu-QFF" secondAttribute="centerX" id="7E2-TY-jaK"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="IVl-iR-UKD" secondAttribute="bottom" constant="273" id="9l9-EA-R13"/>
                             <constraint firstAttribute="centerX" secondItem="IVl-iR-UKD" secondAttribute="centerX" constant="-68" id="EMC-HC-pDh"/>
                             <constraint firstAttribute="centerX" secondItem="sje-en-02r" secondAttribute="centerX" constant="95" id="YzR-vh-Wnr"/>
                             <constraint firstAttribute="centerX" secondItem="Qru-e0-KaW" secondAttribute="centerX" id="emP-GD-Up4"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="sje-en-02r" secondAttribute="bottom" constant="273" id="hZe-cj-lZR"/>
+                            <constraint firstItem="J1N-hu-QFF" firstAttribute="top" secondItem="Qru-e0-KaW" secondAttribute="bottom" constant="44.5" id="lyD-Pk-imc"/>
                             <constraint firstItem="Qru-e0-KaW" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="126" id="wEc-rF-ZbX"/>
                         </constraints>
                     </view>
