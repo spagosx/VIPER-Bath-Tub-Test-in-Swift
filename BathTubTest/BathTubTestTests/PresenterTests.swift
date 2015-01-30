@@ -9,43 +9,6 @@
 import UIKit
 import XCTest
 
-//class MockView: View {
-//    var presenter: Presenter! = nil
-//    var updateWaterLevelCalled = false
-//    var levelString: String!
-//    func updateWaterLevel(level: String) {
-//        updateWaterLevelCalled = true
-//        levelString = level
-//    }
-//    var updateTemperatureStringCalled = false
-//    var temperatureString: String!
-//    func updateTemperature(temperature: String) {
-//        updateTemperatureStringCalled = true
-//        temperatureString = temperature
-//    }
-//}
-
-//class MockInteractor: Interactor {
-//    var fetchWaterLevelCalled = false
-//    var openColdTapCalled = false
-//    var openHotTapCalled = false
-//    var sendTempLevelCalled = false
-//    
-//    override func fetchWaterLevel() {
-//        fetchWaterLevelCalled = true
-//    }
-//    override func toggleColdTap() {
-//        openColdTapCalled = true
-//    }
-//    override func toggleHotTap() {
-//        openHotTapCalled = true
-//    }
-//    
-//    override func sendTemperature() {
-//        sendTempLevelCalled = true
-//    }
-//}
-
 class PresenterTests: XCTestCase {
 
     let presenter = Presenter()

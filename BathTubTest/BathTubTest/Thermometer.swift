@@ -20,11 +20,6 @@ class Thermometer: NSObject {
     private var coldWater: Water!
     private var hotWater: Water!
    
-//    init(coldWater: Water, hotWater: Water) {
-//        self.coldWater = coldWater
-//        self.hotWater = hotWater
-//    }
-    
     class var sharedInstance: Thermometer {
         struct Static {
             static var instance: Thermometer?
