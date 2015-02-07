@@ -1,6 +1,8 @@
 VIPER-Bath-Tub-Test-in-Swift
 ============================
 
+![Alt text](https://travis-ci.org/spagosx/Countdown-Demo.svg)
+
 The Bath Tub test project, designed and architected using VIPER. Written in Swift.
 
 The purpose of this project is to show how to implement the full test, using the great architecture pattern <a href="http://www.objc.io/issue-13/viper.html">VIPER</a>, and Swift. It's developed using the TDD approach. 
