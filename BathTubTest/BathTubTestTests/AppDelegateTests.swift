@@ -23,7 +23,7 @@ class AppDelegateTests: XCTestCase {
 
     func testAppDelegateCallsWireframeOnDidFinishLaunching() {
         let appDelegate = AppDelegate()
-        appDelegate.window = UIWindow(frame: CGRect.zeroRect)
+        appDelegate.window = UIWindow(frame: CGRect.zero)
         let view = ViewController()
         appDelegate.window?.rootViewController = view
         appDelegate.application(UIApplication.sharedApplication(), didFinishLaunchingWithOptions: nil)

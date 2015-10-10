@@ -40,7 +40,7 @@ class InteractorTests: XCTestCase {
     
     func testInteractorSendsCorrectWaterLevel() {
         interactor.sendWaterLevel()
-        XCTAssertEqualWithAccuracy(mockDelegate.waterLevelBeingPassed, Float(15.2), 0)
+        XCTAssertEqualWithAccuracy(mockDelegate.waterLevelBeingPassed, Float(15.2), accuracy: 0)
     }
     
     // MARK: Cold Tap
@@ -60,7 +60,7 @@ class InteractorTests: XCTestCase {
     func testInteractorFillsColdWaterWithCorrectAmountPerSecond() {
         interactor.toggleColdTap()
         waitInRunLoopWithDelay(1)
-        XCTAssertEqualWithAccuracy(mockBath.coldWaterAmountFilled, Float(0.2), 0)
+        XCTAssertEqualWithAccuracy(mockBath.coldWaterAmountFilled, Float(0.2), accuracy: 0)
     }
     
     func testInteractorFillBathWithColdWaterEverySecond() {
@@ -94,7 +94,7 @@ class InteractorTests: XCTestCase {
     func testInteractorFillsHotWaterWithCorrectAmountPerSecond() {
         interactor.toggleHotTap()
         waitInRunLoopWithDelay(1)
-        XCTAssertEqualWithAccuracy(mockBath.hotWaterAmountFilled, Float(0.16), 0.01)
+        XCTAssertEqualWithAccuracy(mockBath.hotWaterAmountFilled, Float(0.16), accuracy: 0.01)
     }
     
     func testInteractorFillsBathWithHotWaterEverySecond() {
@@ -135,7 +135,7 @@ class InteractorTests: XCTestCase {
         let hotWater = Water(amount: 20, temperature: 50)
         let temp = Thermometer.waterTemperature(coldWater: coldWater, hotWater: hotWater)
         interactor.sendTemperature()
-        XCTAssertEqualWithAccuracy(mockDelegate.temperatureValue, temp, 0.1)
+        XCTAssertEqualWithAccuracy(mockDelegate.temperatureValue, temp, accuracy: 0.1)
     }
     
     func testUpdatesTemperatureAsColdWaterFills() {

@@ -26,21 +26,21 @@ class BathTests: XCTestCase {
     func testFillColdWaterReturnsCorrectCombinedLevel() {
         bath.fillColdWater(70)
         bath.fillHotWater(50)
-        XCTAssertEqualWithAccuracy(bath.waterLevel(), Float(120), 0)
+        XCTAssertEqualWithAccuracy(bath.waterLevel(), Float(120), accuracy: 0)
     }
     
     func testFillColdWaterAddsWaterCorrectly() {
         for var i = 0; i < 3; i++ {
             bath.fillColdWater(1)
         }
-        XCTAssertEqualWithAccuracy(bath.coldWaterLevel(), Float(3), 0)
+        XCTAssertEqualWithAccuracy(bath.coldWaterLevel(), Float(3), accuracy: 0)
     }
     
     func testFillHotWaterAddsWaterCorrectly() {
         for var i = 0; i < 3; i++ {
             bath.fillHotWater(1)
         }
-        XCTAssertEqualWithAccuracy(bath.hotWaterLevel(), Float(3), 0)
+        XCTAssertEqualWithAccuracy(bath.hotWaterLevel(), Float(3), accuracy: 0)
     }
     
 }

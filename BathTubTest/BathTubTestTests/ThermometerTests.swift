@@ -25,21 +25,21 @@ class ThermometerTests: XCTestCase {
         let coldWater = Water(amount:30, temperature:10)
         let hotWater = Water(amount:30, temperature:12)
         let temp = Thermometer.waterTemperature(coldWater: coldWater, hotWater: hotWater)
-        XCTAssertEqualWithAccuracy(temp, Float(11), 0.0)
+        XCTAssertEqualWithAccuracy(temp, Float(11), accuracy: 0.0)
     }
     
     func testThermometerCalculateCorrectTemperatureForOddLevel() {
         let coldWater = Water(amount:35, temperature:10)
         let hotWater = Water(amount:40, temperature:12)
         let temp = Thermometer.waterTemperature(coldWater: coldWater, hotWater: hotWater)
-        XCTAssertEqualWithAccuracy(temp, Float(11.07), 0.01)
+        XCTAssertEqualWithAccuracy(temp, Float(11.07), accuracy: 0.01)
     }
     
     func testReturnsZeroIfWaterLevelIsZero() {
         let coldWater = Water(amount:0, temperature:10)
         let hotWater = Water(amount: 0, temperature: 50)
         let temp = Thermometer.waterTemperature(coldWater: coldWater, hotWater: hotWater)
-        XCTAssertEqualWithAccuracy(temp, Float(0), 0, "Should not return nan")
+        XCTAssertEqualWithAccuracy(temp, Float(0), accuracy: 0, "Should not return nan")
     }
 
 }

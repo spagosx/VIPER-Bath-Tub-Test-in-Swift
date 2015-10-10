@@ -33,7 +33,7 @@ class Thermometer: NSObject {
         return Static.instance!
     }
     
-    class func waterTemperature(#coldWater: Water, hotWater: Water) -> Float {
+    class func waterTemperature(coldWater coldWater: Water, hotWater: Water) -> Float {
         
         if coldWater.amount == 0 && hotWater.amount == 0 {
             return 0

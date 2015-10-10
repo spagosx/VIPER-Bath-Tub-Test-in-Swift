@@ -36,7 +36,7 @@ class ViewControllerTests: XCTestCase {
         sut = storyboard.instantiateInitialViewController() as? ViewController
         mockPresenter = MockPresenter()
         sut.presenter = mockPresenter
-        let dummy = sut?.view
+        _ = sut?.view
     }
     
     override func tearDown() {
@@ -51,7 +51,7 @@ class ViewControllerTests: XCTestCase {
     
     func testViewControllerUpdatesInterfaceOnWaterLevelUpdate() {
         sut.updateWaterLevel("50")
-        var sameString = sut.waterLevelLabel?.text == "50"
+        let sameString = sut.waterLevelLabel?.text == "50"
         XCTAssertTrue(sameString)
     }
     
@@ -67,8 +67,8 @@ class ViewControllerTests: XCTestCase {
     }
     
     func testColdTapButtonHasActionConnected() {
-        let actions = sut.coldTapButton?.actionsForTarget(sut, forControlEvent: .TouchUpInside) as? [String]
-        let hasAction = contains(actions!, "coldTapButtonDidReceiveTap")
+        let actions = sut.coldTapButton?.actionsForTarget(sut, forControlEvent: .TouchUpInside) as [String]!
+        let hasAction = (actions).contains("coldTapButtonDidReceiveTap")
         XCTAssertTrue(hasAction)
     }
     
@@ -80,8 +80,8 @@ class ViewControllerTests: XCTestCase {
     }
     
     func testHotTapButtonHasActionConnected() {
-        let actions = sut.hotTapButton?.actionsForTarget(sut, forControlEvent: .TouchUpInside) as? [String]
-        let hasAction = contains(actions!, "hotTapButtonDidReceiveTap")
+        let actions = sut.hotTapButton?.actionsForTarget(sut, forControlEvent: .TouchUpInside) as [String]!
+        let hasAction = (actions).contains("hotTapButtonDidReceiveTap")
         XCTAssertTrue(hasAction)
     }
 
