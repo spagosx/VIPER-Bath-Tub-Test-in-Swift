@@ -30,3 +30,6 @@ The user will be presented with 2 taps. The user will be able to turn on and off
 - It shows how to test NSTimer (looking for suggestion to improve that).
 - It shows a non trivial TDD problem, testing IBOutlet and IBActions connections.
 ...
+
+***TODO***
+- Decouple Interactor class from Thermometer (stop it being a Singleton 'yuk').
