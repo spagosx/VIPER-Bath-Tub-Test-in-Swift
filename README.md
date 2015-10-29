@@ -32,5 +32,5 @@ The user will be presented with 2 taps. The user will be able to turn on and off
 ...
 
 ***TODO***
-- Decouple Interactor class from Thermometer (stop it being a Singleton 'yuk').
+- Decouple Interactor class from Thermometer (INJECT!!!).
 - Interactor does too much. Extract water flow to a flow controller class. Extract water temperatures to a Boiler model class
